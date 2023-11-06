@@ -1,3 +1,6 @@
 <h1 style="color: red;">FED Assignment1 : Built in Directives and Data Binding</h1>
 <hr>
-<app-song-list></app-song-list>
+<h2 *ngIf="isDisplay">Number of songs in my playlist : {{listCount}}</h2>
+<button (click)="getcount()">Toggle Number of Songs</button>
+<hr>
+<app-song-list (displayboolean)="assignboolean($event)" (countnumber)="assignnumber($event)"></app-song-list>
