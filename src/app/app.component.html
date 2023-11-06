@@ -3,4 +3,4 @@
 <h2 *ngIf="isDisplay">Number of songs in my playlist : {{listCount}}</h2>
 <button (click)="getcount()">Toggle Number of Songs</button>
 <hr>
-<app-song-list (displayboolean)="assignboolean($event)" (countnumber)="assignnumber($event)"></app-song-list>
+<app-song-list (assignisDisplay)="assignisDisplay($event)" (assignlistCount)="assignlistCount($event)"></app-song-list>

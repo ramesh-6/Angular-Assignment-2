@@ -13,20 +13,22 @@ export class AppComponent {
   listCount:any;
   isDisplay:any;
   
-  assignboolean($event:any){
+  assignisDisplay($event:any){
     this.isDisplay=$event;
     console.log('assigning new boolean :', this.isDisplay);
   }
 
-  assignnumber($event:any){
+  assignlistCount($event:any){
     this.listCount=$event;
     console.log('assigning new count :', this.listCount);
   }
 
   @ViewChild(SongListComponent) songListComponent: SongListComponent = new SongListComponent();
 
-  getcount() {
-    this.songListComponent.getcount(); // Call the child component's getcount method
+  getcount() {                             // Call the child component's getcount method
+    this.songListComponent.getcount();
+    this.listCount=this.songListComponent.listCount;
+    this.isDisplay=this.songListComponent.isDisplay;
   }
 
   // ngAfterViewInit() {
@@ -34,5 +36,5 @@ export class AppComponent {
   //   this.listCount = this.child.listCount;
   //   this.isDisplay = this.child.isDisplay;
   // }
-  
+
 }

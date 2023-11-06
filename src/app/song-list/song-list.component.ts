@@ -7,8 +7,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class SongListComponent {
 
-  @Output() displayboolean = new EventEmitter<boolean>;
-  @Output() countnumber = new EventEmitter<number>;
+  @Output() assignisDisplay = new EventEmitter<boolean>;
+  @Output() assignlistCount = new EventEmitter<number>;
 
   newSong:string='';
   songList: string[] = ['song1','song2','song3','Song4'];
@@ -16,23 +16,24 @@ export class SongListComponent {
   isDisplay:boolean = false;
 
   ngOnInit(){
-    this.displayboolean.emit(this.isDisplay);
-    this.countnumber.emit(this.listCount);
+    this.assignisDisplay.emit(this.isDisplay);
+    this.assignlistCount.emit(this.listCount);
   }
 
   updateList(){
     this.songList.push(this.newSong);
     this.isDisplay=false;
-    this.displayboolean.emit(this.isDisplay);
-    this.countnumber.emit(this.songList.length);
+    this.assignisDisplay.emit(this.isDisplay);
+    this.assignlistCount.emit(this.songList.length);
     console.log('Updating new song :', this.newSong);
+    console.log('Updating new boolean :', this.isDisplay);
   }
 
   getcount(){
     this.isDisplay=true;
     this.listCount=this.songList.length;
-    this.displayboolean.emit(this.isDisplay);    
-    this.countnumber.emit(this.listCount);
+    this.assignisDisplay.emit(this.isDisplay);    
+    this.assignlistCount.emit(this.listCount);
     console.log('listCount is now:', this.listCount);
   }
 
