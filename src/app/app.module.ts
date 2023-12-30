@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SongListComponent } from './song-list/song-list.component';
+import { MyPlaylistComponent } from './my-playlist/my-playlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SongListComponent
+    SongListComponent,
+    MyPlaylistComponent
   ],
   imports: [
     BrowserModule,
